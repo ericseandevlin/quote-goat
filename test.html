@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Goat Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+            margin: 20px 0 10px 0;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Quote Goat Testing Page</h1>
+    
+    <div class="test-section">
+        <h2>Breaking News Update</h2>
+        <p>This is a test paragraph to verify the extension only affects headers.</p>
+        
+        <h3>Technology Section</h3>
+        <p>Another paragraph that should remain unchanged.</p>
+    </div>
+    
+    <div class="test-section">
+        <h1>Major Company Announcement</h1>
+        <h2>Product Launch Details</h2>
+        <h3>Customer Feedback Summary</h3>
+    </div>
+    
+    <div class="test-section">
+        <h1>A</h1>
+        <h2>Short words test: I am a big fan</h2>
+        <h3>Mixed length words: The quick brown fox jumps</h3>
+    </div>
+    
+    <div class="test-section">
+        <h1>Dynamic Content Test</h1>
+        <button onclick="addDynamicHeader()">Add Dynamic Header</button>
+        <div id="dynamic-content"></div>
+    </div>
+    
+    <script>
+        function addDynamicHeader() {
+            const container = document.getElementById('dynamic-content');
+            const newHeader = document.createElement('h2');
+            newHeader.textContent = 'Dynamically Added Header Content';
+            container.appendChild(newHeader);
+        }
+        
+        // Load and test the Quote Goat content script
+        function loadQuoteGoatScript() {
+            const script = document.createElement('script');
+            script.src = './content-script.js';
+            document.head.appendChild(script);
+        }
+        
+        // Load the script after page loads
+        window.addEventListener('load', () => {
+            console.log('Test page loaded, loading Quote Goat script...');
+            loadQuoteGoatScript();
+        });
+    </script>
+</body>
+</html>

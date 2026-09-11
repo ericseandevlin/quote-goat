@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Quote Goat",
+  "version": "1.0.0",
+  "description": "Automatically wraps random words in webpage headers with scare quotes for maximum sarcasm and chaos.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "author": "Quote Goat Team"
+}
